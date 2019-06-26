@@ -17,14 +17,14 @@ namespace Carne.Pages
             InitializeComponent();
         }
 
-        private void UserClicked(object sender, EventArgs e)
+        private async void UserClicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushModalAsync(new NavigationPage(new DailyRecommendationsPage()));
         }
 
-        private void OwnerClicked(object sender, EventArgs e)
+        private async void OwnerClicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushModalAsync(new RestaurantOwnerPage());
         }
     }
 }

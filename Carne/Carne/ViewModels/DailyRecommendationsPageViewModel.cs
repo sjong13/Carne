@@ -19,8 +19,12 @@ namespace Carne.ViewModels
         private int viewTime;
         private Stopwatch stopwatch;
         private int maxIndexReached = -1;
-
-        public User TestUser;
+        private User testUser;
+        public User TestUser
+        {
+            get { return testUser; }
+            set { testUser = value; OnPropertyChanged(); }
+        }
         public ObservableCollection<Recommendation> Recommendations;
         private Recommendation currentRecommendation;
 

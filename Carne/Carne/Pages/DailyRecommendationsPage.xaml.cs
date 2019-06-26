@@ -39,5 +39,17 @@ namespace Carne.Pages
         {
             await Navigation.PushAsync(new MoreInformationPage(ViewModel));
         }
+
+        private async void AccessAccountPopup(object sender, EventArgs e)
+        {
+            var result = await DisplayActionSheet(ViewModel.TestUser.UserName + "'s" + " Account", "Cancel", null, "Logout");
+
+            switch(result)
+            {
+                case "Logout":
+                    await Navigation.PushModalAsync(new LoginPage());
+                    break;
+            }
+        }
     }
 }

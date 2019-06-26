@@ -41,6 +41,9 @@
         
         <ActivityIndicator x:Name="ImageLoadingIndicator" Color="Blue" BindingContext="{x:Reference MeatImage}" IsRunning="{Binding IsLoading}"
                            HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button x:Name="AccessAccountButton" VerticalOptions="End" HorizontalOptions="Start" Margin="15,0,0,10" Text="&#xf007;" FontFamily="fontawesome"
+                FontSize="40"
+                Clicked="AccessAccountPopup"/>
     </Grid>
 
 </ContentPage>
