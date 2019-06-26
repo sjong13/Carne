@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Carne.Views.DailyRecommendationsPage"
+             x:Name="CarneMainPage"
+             xmlns:effects="clr-namespace:Carne.Extensions"
+             xmlns:vm="clr-namespace:Carne.ViewModels"
+             xmlns:multigesture="clr-namespace:MultiGestureViewPlugin;assembly=MultiGestureViewPlugin"
+             NavigationPage.HasNavigationBar="False"
+              >
+
+    <ContentPage.BindingContext>
+        <vm:DailyRecommendationsPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#bca0a0</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid x:Name="MainStack" VerticalOptions="Fill" BackgroundColor="#bca0a0">
+        <Grid.GestureRecognizers>
+
+        </Grid.GestureRecognizers>
+        <Image x:Name="MeatImage" Grid.Row="0" Aspect="AspectFill" >
+            <Image.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Up" Swiped="OnSwipeUp"/>
+                <SwipeGestureRecognizer Direction="Left" Swiped="OnSwipeLeft"/>
+            </Image.GestureRecognizers>
+            <Image.Source>
+                <UriImageSource Uri="{Binding CurrentRecommendation.ImageAddress}"
+                                CacheValidity="14"
+                                CachingEnabled="True"/>
+            </Image.Source>
+            </Image>
+        
+        <ActivityIndicator x:Name="ImageLoadingIndicator" Color="Blue" BindingContext="{x:Reference MeatImage}" IsRunning="{Binding IsLoading}"
+                           HorizontalOptions="Center" VerticalOptions="Center"/>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:Carne.Converters"
+             mc:Ignorable="d"
+             x:Class="Carne.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+            <Style x:Key="FA.Solid" TargetType="Button">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String"
+                                    Android="fontawesome5solid.otf#Font Awesome 5 Free Solid"
+                                    iOS="Font Awesome 5 Free Solid"
+                                    />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <OnPlatform x:TypeArguments="x:String"
+                        x:Key="fontawesome">
+                <!--<On Platform="Android"
+                    Value="fontawesome5solid.otf#Font Awesome 5 Free Solid"/>-->
+                <On Platform="iOS"
+                    Value="FontAwesome"/>
+                <On Platform="Android"
+                    Value="fontawesome-webfont.ttf#FontAwesome"/>
+                <!--<On Platform="UWP"
+                    Value="/Assets/fontawesome5regular.otf"/>-->
+            </OnPlatform>
+            <converters:LikedBoolToFontAwesomeConverter
+                x:Key="LikedBoolToFontAwesomeConverter"/>
+
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>
