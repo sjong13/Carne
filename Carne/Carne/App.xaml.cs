@@ -3,7 +3,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Carne.Services;
-using Carne.Views;
+using Carne.Pages;
 
 namespace Carne
 {
@@ -24,8 +24,7 @@ namespace Carne
                 DependencyService.Register<MockDataStore>();
             else
                 DependencyService.Register<AzureDataStore>();
-            MainPage = new NavigationPage( new DailyRecommendationsPage());
-            NavigationPage.SetHasNavigationBar(MainPage, false);
+            MainPage = new NavigationPage( new LoginPage());
         }
 
         protected override void OnStart()

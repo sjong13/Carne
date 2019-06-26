@@ -10,11 +10,21 @@ using Xamarin.Forms.Xaml;
 namespace Carne.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RecommendationView : ContentView
+    public partial class LoginPage : ContentPage
     {
-        public RecommendationView()
+        public LoginPage()
         {
             InitializeComponent();
+        }
+
+        private void UserClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OwnerClicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

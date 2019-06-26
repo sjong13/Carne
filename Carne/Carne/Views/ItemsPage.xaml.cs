@@ -8,10 +8,10 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Carne.Models;
-using Carne.Views;
+using Carne.Pages;
 using Carne.ViewModels;
 
-namespace Carne.Views
+namespace Carne.Pages
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer

@@ -4,16 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Carne.Views.MoreInformationPage"
+             x:Class="Carne.Pages.MoreInformationPage"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="Red">
             <StackLayout.GestureRecognizers>
                 <SwipeGestureRecognizer Direction="Right" Swiped="OnSwipeRight"/>
             </StackLayout.GestureRecognizers>
-            <Label Text="{Binding CurrentRecommendation.ItemName}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
-            <Label Text="{Binding CurrentRecommendation.RestaurantName}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
-            <Label Text="{Binding CurrentRecommendation.Cost}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                <Label Text="{Binding CurrentRecommendation.ItemName}"/>
+                <Label Text="{Binding CurrentRecommendation.RestaurantName}"/>
+                <Label Text="{Binding CurrentRecommendation.Cost}"/>
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

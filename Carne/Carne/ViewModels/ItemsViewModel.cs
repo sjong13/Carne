@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 using Carne.Models;
-using Carne.Views;
+using Carne.Pages;
 
 namespace Carne.ViewModels
 {

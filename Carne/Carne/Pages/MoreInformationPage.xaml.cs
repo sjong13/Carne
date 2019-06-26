@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Carne.Views
+namespace Carne.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MoreInformationPage : ContentPage

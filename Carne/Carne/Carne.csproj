@@ -26,16 +26,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\MoreInformationPage.xaml.cs">
+    <Compile Update="Pages\MoreInformationPage.xaml.cs">
       <DependentUpon>MoreInformationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\DailyRecommendationsPage.xaml.cs">
+    <Compile Update="Pages\DailyRecommendationsPage.xaml.cs">
       <DependentUpon>DailyRecommendationsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\MoreInformationPage.xaml">
+    <EmbeddedResource Update="Pages\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\MoreInformationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RecommendationView.xaml">

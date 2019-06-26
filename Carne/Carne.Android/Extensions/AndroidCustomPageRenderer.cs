@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Carne.Droid.Extensions;
-using Carne.Views;
+using Carne.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
