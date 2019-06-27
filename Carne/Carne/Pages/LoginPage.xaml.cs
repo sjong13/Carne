@@ -24,7 +24,7 @@ namespace Carne.Pages
 
         private async void OwnerClicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new RestaurantOwnerPage());
+            await Navigation.PushModalAsync(new OwnerPage());
         }
     }
 }

@@ -27,7 +27,7 @@
         <Grid.GestureRecognizers>
 
         </Grid.GestureRecognizers>
-        <Image x:Name="MeatImage" Grid.Row="0" Aspect="AspectFill" >
+        <Image x:Name="MeatImage" Grid.Row="0" Aspect="AspectFill" IsOpaque="True">
             <Image.GestureRecognizers>
                 <SwipeGestureRecognizer Direction="Up" Swiped="OnSwipeUp"/>
                 <SwipeGestureRecognizer Direction="Left" Swiped="OnSwipeLeft"/>
