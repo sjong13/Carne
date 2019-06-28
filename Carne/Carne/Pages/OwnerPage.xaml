@@ -7,12 +7,12 @@
              x:Class="Carne.Pages.OwnerPage"
              xmlns:pages="clr-namespace:Carne.Pages">
   <MasterDetailPage.Master>
-    <pages:OwnerPageMaster x:Name="MasterPage" />
+    <pages:OwnerPageMaster x:Name="MasterPage"/>
   </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
     <NavigationPage>
       <x:Arguments>
-        <pages:OwnerPageDetail />
+        <pages:OwnerPageDetail x:Name="DetailPage"/>
       </x:Arguments>
     </NavigationPage>
   </MasterDetailPage.Detail>

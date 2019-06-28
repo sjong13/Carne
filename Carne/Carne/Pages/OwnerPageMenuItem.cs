@@ -15,7 +15,7 @@ namespace Carne.Pages
         }
         public int Id { get; set; }
         public string Title { get; set; }
-
+        public string ImageAddress { get; set; }
         public Type TargetType { get; set; }
     }
 }

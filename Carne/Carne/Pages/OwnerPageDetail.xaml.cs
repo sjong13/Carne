@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static Carne.Pages.OwnerPageMaster;
 
 namespace Carne.Pages
 {
@@ -14,6 +15,7 @@ namespace Carne.Pages
     {
         public OwnerPageDetail()
         {
+            BindingContext = new OwnerPageMasterViewModel();
             InitializeComponent();
         }
     }
