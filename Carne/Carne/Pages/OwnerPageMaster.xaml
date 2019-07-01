@@ -37,7 +37,7 @@
           <Label
               Grid.Column="1"
               Grid.Row="2"
-              Text="AppName"
+              Text="Listings"
               Style="{DynamicResource SubtitleStyle}"/>
         </Grid>
       </ListView.Header>
