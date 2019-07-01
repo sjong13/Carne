@@ -6,7 +6,10 @@
              mc:Ignorable="d"
              x:Class="Carne.Pages.OwnerPageDetail"
              Title="Detail">
-  <StackLayout Padding="10">
+  <Grid Padding="10">
         <Image Source="{Binding ImageAddress}"/>
-    </StackLayout>
+        <Button x:Name="AccessAccountButton" VerticalOptions="End" HorizontalOptions="Start" Margin="15,0,0,10" Text="&#xf007;" FontFamily="{StaticResource fontawesomeregular}"
+                FontSize="40"
+                Clicked="AccessAccountPopup"/>
+    </Grid>
 </ContentPage>
