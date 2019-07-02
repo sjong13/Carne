@@ -21,6 +21,30 @@ namespace Carne.Pages
             InitializeComponent();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            var masterPage = (OwnerPage)Parent?.Parent;
+
+            if (masterPage != null)
+                masterPage.IsGestureEnabled = true;
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            var masterPage = (OwnerPage)Parent?.Parent;
+
+            if(masterPage !=null)
+                masterPage.IsGestureEnabled = false;
+        }
+        private async void OnSwipeLeft(object sender, SwipedEventArgs e)
+        {
+            
+            
+            await Navigation.PushAsync(new MoreInformationPage(ViewModel));
+        }
+
         private async void AccessAccountPopup(object sender, EventArgs e)
         {
             var result = await DisplayActionSheet(ViewModel.TestUser.UserName + "'s" + " Account", "Cancel", null, "Logout");

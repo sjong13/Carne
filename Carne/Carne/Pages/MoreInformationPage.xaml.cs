@@ -17,13 +17,17 @@ namespace Carne.Pages
         {
             BindingContext = viewModel;
             InitializeComponent();
+
             
         }
 
         private async void OnSwipeRight(object sender, SwipedEventArgs e)
         {
             if(Device.RuntimePlatform == Device.Android && Navigation.NavigationStack.Count > 1)
-            await Navigation.PopAsync();
+            {
+                await Navigation.PopAsync();
+            }
+            
         }
     }
 }

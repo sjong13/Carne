@@ -15,9 +15,11 @@ namespace Carne.Pages
     {
         public OwnerPage()
         {
+            
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
             DetailPage.BindingContext = MasterPage.BindingContext;
+            
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
