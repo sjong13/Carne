@@ -18,6 +18,8 @@ namespace Carne.Pages
     {
         public ListView ListView;
 
+        
+
         public OwnerPageMaster()
         {
             InitializeComponent();
@@ -29,6 +31,12 @@ namespace Carne.Pages
 
         public class OwnerPageMasterViewModel : INotifyPropertyChanged
         {
+            private Recommendation temporaryRecommendation;
+            public Recommendation TemporaryRecommendation
+            {
+                get { return temporaryRecommendation; }
+                set { temporaryRecommendation = value; OnPropertyChanged(); }
+            }
             public ObservableCollection<OwnerPageMenuItem> MenuItems { get; set; }
             public ObservableCollection<Recommendation> Recommendations;
 
@@ -37,7 +45,7 @@ namespace Carne.Pages
             public ObservableCollection<Recommendation> OwnerListings
             {
                 get { return ownerListings; }
-                set { ownerListings = value; }
+                set { ownerListings = value; OnPropertyChanged(); }
             }
 
             public string OwnerName = "Fogo de Chao";
@@ -172,6 +180,8 @@ namespace Carne.Pages
 
             }
 
+
+
             #region INotifyPropertyChanged Implementation
             public event PropertyChangedEventHandler PropertyChanged;
             void OnPropertyChanged([CallerMemberName] string propertyName = "")
@@ -182,6 +192,20 @@ namespace Carne.Pages
                 PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
             #endregion
+
+            public void SaveButtonClicked(object sender, EventArgs e)
+            {
+                MenuItems.Add(new OwnerPageMenuItem { Id = MenuItems.Count(), Title = TemporaryRecommendation.ItemName,
+                    ImageAddress = null });
+                OwnerListings.Add(TemporaryRecommendation);
+            }
+        }
+        private async void AddButtonClicked(object sender, EventArgs e)
+        {
+            var vm = (OwnerPageMasterViewModel)BindingContext;
+
+            vm.TemporaryRecommendation = new Recommendation();
+            await Navigation.PushModalAsync(new NavigationPage(new AddRecommendationPage((OwnerPageMasterViewModel)BindingContext)));
         }
 
         private async void DeleteButtonClicked(object sender, EventArgs e)
@@ -191,12 +215,14 @@ namespace Carne.Pages
             switch(result)
             {
                 case "Yes":
-                    await DisplayAlert(null, "Entry Removed", "Ok");
+                    
                     break;
                 case "No":
                     break;
             }
         }
+
+        
 
 
     }

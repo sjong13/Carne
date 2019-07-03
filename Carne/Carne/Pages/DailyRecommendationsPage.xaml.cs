@@ -47,7 +47,7 @@ namespace Carne.Pages
             switch(result)
             {
                 case "Logout":
-                    await Navigation.PushModalAsync(new LoginPage());
+                    await Navigation.PopModalAsync();
                     break;
             }
         }

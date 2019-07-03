@@ -15,5 +15,12 @@
         <Button x:Name="AccessAccountButton" VerticalOptions="End" HorizontalOptions="Start" Margin="15,0,0,10" Text="&#xf007;" FontFamily="{StaticResource fontawesomeregular}"
                 FontSize="40"
                 Clicked="AccessAccountPopup"/>
+        <Button x:Name="DeleteItemButton"
+                VerticalOptions="Start"
+                HorizontalOptions="End"
+                Margin="0,10,15,0"
+                Text="&#xf056;"
+                FontFamily="{StaticResource fontawesomesolid}"
+                Clicked="DeleteItemButtonClicked"/>
     </Grid>
 </ContentPage>

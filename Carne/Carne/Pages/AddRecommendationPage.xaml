@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Carne.Pages.AddRecommendationPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.0*"/>
+                <RowDefinition Height="1.0*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            
+            <Button x:Name="AddImageButton"
+                    Text="&#xf030;"
+                    FontFamily="{StaticResource fontawesomesolid}"
+                    Grid.Row="0"
+                    Clicked="AddImageButtonClicked"/>
+                    
+            <Grid x:Name="PropertiesGrid"
+                  Grid.Row="1">
+                <Label Grid.Row="0"
+                       Grid.Column="0"
+                       Text="Restaurant Name"/>
+                <Entry Grid.Row="0"
+                       Grid.Column="1"
+                       Text="{Binding TemporaryRecommendation.RestaurantName}"/>
+                <Label Grid.Row="1"
+                       Grid.Column="0"
+                       Text="Meat Name"/>
+                <Entry Grid.Row="1"
+                       Grid.Column="1"
+                       Text="{Binding TemporaryRecommendation.ItemName}"/>
+            </Grid>
+            
+            <StackLayout x:Name="SaveCancelButtonStack"
+                         Grid.Row="2"
+                         Orientation="Horizontal"
+                         HorizontalOptions="Fill">
+                <Button x:Name="CancelButton"
+                        Text="Cancel"
+                        Clicked="CancelButtonClicked"/>
+                <Button x:Name="SaveButton"
+                        Text="Save"
+                        Clicked="SaveButtonClicked"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

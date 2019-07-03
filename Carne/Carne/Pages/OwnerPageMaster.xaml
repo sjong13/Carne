@@ -57,6 +57,7 @@
                                    FontSize="24"
                                    VerticalOptions="Center"
                                    Margin="10">
+                                
 
                             </Label>
 
@@ -66,5 +67,12 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
+        <Button x:Name="AddButton" 
+                Text="&#xf055;" 
+                FontFamily="{StaticResource fontawesomesolid}"
+                FontSize="40"
+                Margin="0,10"
+                BackgroundColor="Transparent"
+                Clicked="AddButtonClicked"/>
   </StackLayout>
 </ContentPage>

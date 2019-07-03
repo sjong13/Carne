@@ -52,9 +52,14 @@ namespace Carne.Pages
             switch (result)
             {
                 case "Logout":
-                    await Navigation.PushModalAsync(new LoginPage());
+                    await Navigation.PopModalAsync();
                     break;
             }
+        }
+
+        private async void DeleteItemButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
     }
 }
