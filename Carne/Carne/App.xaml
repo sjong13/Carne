@@ -52,6 +52,10 @@
             </OnPlatform>
             <converters:LikedBoolToFontAwesomeConverter
                 x:Key="LikedBoolToFontAwesomeConverter"/>
+            
+            <FileImageSource
+                x:Key="HamburguerIcon"
+                File="hamburguer_icon.png" />
 
         </ResourceDictionary>
     </Application.Resources>

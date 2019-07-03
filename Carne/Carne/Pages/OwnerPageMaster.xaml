@@ -6,7 +6,8 @@
              mc:Ignorable="d"
              x:Class="Carne.Pages.OwnerPageMaster"
              xmlns:effects="clr-namespace:Carne.Extensions"
-             Title="Master">
+             Title="Master"
+             Icon="{StaticResource HamburguerIcon}">
   <StackLayout>
     <ListView x:Name="MenuItemsListView"
               SeparatorVisibility="None"

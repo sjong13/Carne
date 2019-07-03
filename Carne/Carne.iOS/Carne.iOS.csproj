@@ -83,6 +83,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
     <BundleResource Include="Resources\fontawesome-webfont.ttf" />
+    <BundleResource Include="Resources\hamburguer_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -172,7 +173,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Carne\Carne.csproj">
-      <Project>{FB7B6380-B672-48CA-B7A5-A5DC7929542D}</Project>
+      <Project>{5ADBEC0F-141A-4FAD-BC9E-85839B88C5D1}</Project>
       <Name>Carne</Name>
     </ProjectReference>
   </ItemGroup>
