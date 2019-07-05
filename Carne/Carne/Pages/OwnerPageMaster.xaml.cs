@@ -17,14 +17,15 @@ namespace Carne.Pages
     public partial class OwnerPageMaster : ContentPage
     {
         public ListView ListView;
-
+        public OwnerPageMasterViewModel ViewModel;
         
 
         public OwnerPageMaster()
         {
             InitializeComponent();
 
-            BindingContext = new OwnerPageMasterViewModel();
+            BindingContext = ViewModel = new OwnerPageMasterViewModel();
+            
             ListView = MenuItemsListView;
             ListView.SeparatorVisibility = SeparatorVisibility.Default;
         }
@@ -177,6 +178,13 @@ namespace Carne.Pages
                     OwnerListings.Add(item);
                     count++;
                 }
+
+                MessagingCenter.Subscribe<OwnerPageMenuItem>(this, "Delete", (sender) =>
+                {
+                    MenuItems.Remove(MenuItems.Where(x => x.Id == sender.Id).FirstOrDefault());
+                    OwnerListings.Remove(OwnerListings.Where(x => x.ImageAddress == sender.ImageAddress).FirstOrDefault());
+                    
+                });
 
             }
 

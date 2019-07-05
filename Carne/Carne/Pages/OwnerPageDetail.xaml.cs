@@ -16,7 +16,6 @@ namespace Carne.Pages
         public DailyRecommendationsPageViewModel ViewModel;
         public OwnerPageDetail()
         {
-            BindingContext = new OwnerPageMasterViewModel();
             ViewModel = new DailyRecommendationsPageViewModel();
             InitializeComponent();
         }
@@ -40,8 +39,6 @@ namespace Carne.Pages
         }
         private async void OnSwipeLeft(object sender, SwipedEventArgs e)
         {
-            
-            
             await Navigation.PushAsync(new MoreInformationPage(ViewModel));
         }
 
@@ -59,7 +56,15 @@ namespace Carne.Pages
 
         private async void DeleteItemButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            var item = BindingContext as OwnerPageMenuItem;
+
+            if (item != null)
+            {
+                MessagingCenter.Send(item, "Delete");
+
+                BindingContext = null;
+            }
+            
         }
     }
 }
