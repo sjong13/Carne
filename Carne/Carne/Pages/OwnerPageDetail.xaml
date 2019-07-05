@@ -7,7 +7,8 @@
              x:Class="Carne.Pages.OwnerPageDetail"
              Title="Detail">
   <Grid VerticalOptions="Fill" BackgroundColor="#bfbfbf">
-        <Image Source="{Binding ImageAddress}" Aspect="AspectFill">
+        <Image x:Name="DetailImage"
+            Source="{Binding ImageAddress}" Aspect="AspectFill">
             <Image.GestureRecognizers>
                 <SwipeGestureRecognizer Direction="Left" Swiped="OnSwipeLeft"/>
             </Image.GestureRecognizers>
